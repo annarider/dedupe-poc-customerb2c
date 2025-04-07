@@ -1,2 +1,5 @@
 # dedupe-poc-customerb2c
-Dedupe POC project using Semarchy xDM Customer B2C tutorial data
+This project uses Dedupe to complete a POC project 
+to test the Dedupe library for adding ML-based 
+matching, entity resolution, and record linkage using
+Semarchy xDM's Customer B2C tutorial data.
