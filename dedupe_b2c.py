@@ -180,7 +180,7 @@ if __name__ == "__main__":
         writer.writeheader()
 
         for row in reader:
-            row_id = int(row["Id"])
+            row_id = f"{row['b_pubid']}.{row['b_sourceid']}"
             row.update(cluster_membership[row_id])
             writer.writerow(row)
 
