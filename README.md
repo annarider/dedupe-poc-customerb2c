@@ -21,6 +21,7 @@ source /usr/local/bin/virtualenvwrapper.sh
 ```
 - Get started installing dedupe using virtual environment:
 ```
+source ~/.zshrc # reload after previous step
 mkvirtualenv entity_resolution
 pip install dedupe
 ```
@@ -74,7 +75,13 @@ Job Name Pattern: CustomerB2C%
 
 ## Option B: Minimal set up with B2C Data
 
-1. 
+1. Take the CSV example and modify the script
+https://github.com/dedupeio/dedupe-examples/blob/main/csv_example/csv_example.py
+Changes include: 
+- Removed pre-processing (as it's performed in xDM enrichers)
+- Tweak input & output file names
+- Tweak Read Data 
+- Tweak fields for defining matching criteria
 
 ## Credits
 I'm basing this off Thomas's PoC on dedupe, which uses
