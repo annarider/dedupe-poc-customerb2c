@@ -36,9 +36,17 @@ def readData(filename):
     with open(filename) as f:
         reader = csv.DictReader(f)
         for row in reader:
-            clean_row = [(k, v) for (k, v) in row.items()]
-            row_id = f"{row['b_pubid']}.{row['b_sourceid']}"
-            data_d[row_id] = dict(clean_row)
+            # Clean empty strings to be None instead
+            clean_row = {}
+            for k, v in row.items():
+                # Replace empty strings with None to avoid ZeroDivisionError
+                clean_row[k] = None if v == "" else v
+
+            # Create a unique row_id
+            row_id = (
+                f"{row.get('b_pubid', 'unknown')}.{row.get('b_sourceid', 'unknown')}"
+            )
+            data_d[row_id] = clean_row
 
     return data_d
 
