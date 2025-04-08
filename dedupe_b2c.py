@@ -37,7 +37,7 @@ def readData(filename):
         reader = csv.DictReader(f)
         for row in reader:
             clean_row = [(k, v) for (k, v) in row.items()]
-            row_id = int(row["Id"])
+            row_id = f"{row['b_pubid']}.{row['b_sourceid']}"
             data_d[row_id] = dict(clean_row)
 
     return data_d
@@ -177,11 +177,11 @@ if __name__ == "__main__":
             writer.writerow(row)
 
     # ## Calculate time dedupe took
-    
+
     end_time = time.time()
     processing_time = end_time - start_time
     print(f"Processing completed in {processing_time:.2f} seconds")
 
     # Optionally, save to a file:
     with open("timing_results.txt", "w") as f:
-    f.write(f"Dedupe processing time: {processing_time:.2f} seconds")
+        f.write(f"Dedupe processing time: {processing_time:.2f} seconds")
