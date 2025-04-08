@@ -53,3 +53,8 @@ select
 	cluster_id
 from
 	semarchy_customer_b2c_amer.mi_person;
+
+select *
+from semarchy_customer_b2c_amer.mi_person mi
+where mi.standardized_phone   is null
+;
