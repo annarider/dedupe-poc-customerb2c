@@ -24,9 +24,11 @@ source /usr/local/bin/virtualenvwrapper.sh
 source ~/.zshrc # reload after previous step
 mkvirtualenv entity_resolution
 pip install dedupe
+pip install dedupe-variable-datetime # B2C has date_of_birth
 ```
-- Optional: get tests running
+- Optional: Libraries
 ```
+pip install -r requirements.txt
 pip install pytest
 ```
 
@@ -82,6 +84,7 @@ Changes include:
 - Tweak input & output file names
 - Tweak Read Data 
 - Tweak fields for defining matching criteria
+- Add a timer to figure out how long it takes to run dedupe
 
 ## Credits
 I'm basing this off Thomas's PoC on dedupe, which uses
