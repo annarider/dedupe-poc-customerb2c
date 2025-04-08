@@ -85,6 +85,24 @@ Changes include:
 - Tweak Read Data 
 - Tweak fields for defining matching criteria
 - Add a timer to figure out how long it takes to run dedupe
+- See history of commits to see all the tweaks I made
+
+2. Analyze the results in SQL 
+- See database folder for scripts to understand the results
+
+3. Initial impressions & areas for improvement
+- The supervised training was straightforward on the 
+command line but we'd need a better user interface for
+non-technical users. 
+- It's great the learned settings & training.json exist.
+This makes it much faster to run after providing the initial
+training data set and supervised learning inputs
+- The training.json also means it's potentially possible to use
+UM data to train the model. TODO: Area for future investigation
+- I would like weighting in this model. member_id should have a 
+much higher weighting than it currently does as this member_id is
+one of the most trusted data values that the model should perform
+an exact match on.  
 
 ## Credits
 I'm basing this off Thomas's PoC on dedupe, which uses
