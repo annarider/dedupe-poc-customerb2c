@@ -5,7 +5,9 @@ This code demonstrates how to use dedupe with a comma separated values
 quickly on datasets up to ~10,000 rows.
 
 We start with a CustomerB2C CSV file containing our data from the
-MI table, which means it contains normalized fields.
+MI table, which means it contains normalized fields. We are
+skipping pre-processing in this file because standardizing data
+ happens inside xDM using enrichers already.
 
 The output will be a CSV with our clustered results.
 
@@ -20,21 +22,6 @@ import re
 
 import dedupe
 from unidecode import unidecode
-
-
-def preProcess(column):
-    """
-    Do a little bit of data cleaning with the help of Unidecode and Regex.
-    Things like casing, extra spaces, quotes and new lines can be ignored.
-    """
-    column = unidecode(column)
-    column = re.sub("  +", " ", column)
-    column = re.sub("\n", " ", column)
-    column = column.strip().strip('"').strip("'").lower().strip()
-    # If data is missing, indicate that by setting the value to `None`
-    if not column:
-        column = None
-    return column
 
 
 def readData(filename):
