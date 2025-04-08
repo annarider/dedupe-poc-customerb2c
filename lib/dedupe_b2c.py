@@ -34,7 +34,7 @@ def readData(filename):
     with open(filename) as f:
         reader = csv.DictReader(f)
         for row in reader:
-            clean_row = [(k, preProcess(v)) for (k, v) in row.items()]
+            clean_row = [(k, v) for (k, v) in row.items()]
             row_id = int(row["Id"])
             data_d[row_id] = dict(clean_row)
 
