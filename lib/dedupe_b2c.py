@@ -68,10 +68,10 @@ if __name__ == "__main__":
 
     # ## Setup
 
-    input_file = "csv_example_messy_input.csv"
-    output_file = "csv_example_output.csv"
-    settings_file = "csv_example_learned_settings"
-    training_file = "csv_example_training.json"
+    input_file = "2025-04-08_mi_person.csv"
+    output_file = "2025-04-08_mi_person_clustered.csv"
+    settings_file = "customerb2c_learned_settings"
+    training_file = "customerb2c_training.json"
 
     print("importing data ...")
     data_d = readData(input_file)
