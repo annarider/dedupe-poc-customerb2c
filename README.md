@@ -111,6 +111,12 @@ used for probabilistic matching.
 - There should be monitoring on the model over time, including
 a test set with true matches.
 
+4. Metrics
+- For initial 245 records, including human input training time on 
+console: Processing time: 229.83 seconds
+- For subsequent 337 records (245 records were from initial
+training data), Processing completed in 1.25 seconds
+
 
 ## Credits
 I'm basing this off Thomas's PoC on dedupe, which uses
