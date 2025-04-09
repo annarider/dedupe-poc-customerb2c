@@ -80,8 +80,8 @@ if __name__ == "__main__":
 
     # ## Setup
 
-    input_file = "2025-04-08_mi_person.csv"
-    output_file = "2025-04-09_mi_person_clustered.csv"
+    input_file = "2025-04-09-additional-person.csv"
+    output_file = "2025-04-09_mi_person_additional_clustered.csv"
     settings_file = "customerb2c_learned_settings"
     training_file = "customerb2c_training.json"
 

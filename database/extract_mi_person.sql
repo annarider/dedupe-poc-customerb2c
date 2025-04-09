@@ -49,12 +49,28 @@ select
 	addcountry,
 	mdm_id,
 	effective_update_date,
-	guess_gender,
-	cluster_id
+	guess_gender
 from
 	semarchy_customer_b2c_amer.mi_person;
 
 select *
 from semarchy_customer_b2c_amer.mi_person mi
 where mi.standardized_phone   is null
+;
+
+-- check for count from semarchy_customer_b2c_mdm to compare
+-- 337
+select count(*)
+from semarchy_customer_b2c_mdm.mi_person mi
+;
+
+-- check for count from semarchy_customer_b2c_amer to compare
+-- 245
+select count(*)
+from semarchy_customer_b2c_amer.mi_person mi
+;
+
+-- check for count from semarchy_customer_b2c_mdm to compare
+select *
+from semarchy_customer_b2c_mdm.mi_person mi
 ;
