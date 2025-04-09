@@ -103,6 +103,14 @@ UM data to train the model. TODO: Area for future investigation
 much higher weighting than it currently does as this member_id is
 one of the most trusted data values that the model should perform
 an exact match on.  
+- No manual or expert weighting possible. The ML model does the 
+weighting based on supervised learning. This means there's a 
+compelling purpose for xDM's current match engine. xDM's 
+exact match can be useful for expert input and ML can be
+used for probabilistic matching.
+- There should be monitoring on the model over time, including
+a test set with true matches.
+
 
 ## Credits
 I'm basing this off Thomas's PoC on dedupe, which uses
